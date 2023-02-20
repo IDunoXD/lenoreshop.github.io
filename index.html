@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+.containerx {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.containerx:hover .image {
+  opacity: 0.3;
+}
+
+.containerx:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+
+.fa-dribbble {
+  background: #ea4c89;
+  color: white;
+}
+
+.fa-vimeo {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+}
+
+.fa-vine {
+  background: #00b489;
+  color: white;
+}
+
+.fa-foursquare {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-stumbleupon {
+  background: #eb4924;
+  color: white;
+}
+
+.fa-flickr {
+  background: #f40083;
+  color: white;
+}
+
+.fa-yahoo {
+  background: #430297;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+.fa-rss {
+  background: #ff6600;
+  color: white;
+}
+/* Style inputs */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.columnx {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.rowx:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+#navbar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display:block;
+  transition: top 0.3s;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body {
+  background-image: url('bg.gif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+    .btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .success {background-color: #4CAF50;border-radius: 12px;} /* Green */
+    .success:hover {background-color: #46a049;}
+
+/* Style tab links */
+.tablink {
+    background-color: #4D0EAB;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 33.3%;
+}
+
+.tablink:hover {
+    background-color: #661DD3;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+}
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+.columnx {
+  float: left;
+  width: 20%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+</head>
+<body>
+
+<div id="navbar">
+  <button class="tablink" onclick="openPage('Home', this, '#B990F7')"><font color="black">Home</button>
+  <button class="tablink" onclick="openPage('News', this, '#B990F7')" id="defaultOpen"><font color="black">About</button>
+  <button class="tablink" onclick="openPage('Contact', this, '#B990F7')"><font color="black">Contact</button>
+</div>
+
+<div id="Home" class="tabcontent">
+  <h2 style="text-align:center">Тематика</h2>
+  <div class="column">
+    <img src="44ab54676b0010f3f9d57171ab4e646e.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="153351079d3d33c4f34a43b42509adea.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="ff5d4ad590f8ed84c62bb9629de1af94.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="f4d4b5c9d0533010b1c5acdccba5c861.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">×</span>
+    <div class="modal-content">
+
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="44ab54676b0010f3f9d57171ab4e646e.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="153351079d3d33c4f34a43b42509adea.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="ff5d4ad590f8ed84c62bb9629de1af94.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="f4d4b5c9d0533010b1c5acdccba5c861.jpg" style="width:100%">
+      </div>
+      
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="44ab54676b0010f3f9d57171ab4e646e.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="153351079d3d33c4f34a43b42509adea.jpg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="ff5d4ad590f8ed84c62bb9629de1af94.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="f4d4b5c9d0533010b1c5acdccba5c861.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+  <h2 style="text-align:center"><b>Популярні ілюстрації</b></h2>
+  <div class="row">
+    <div class="columnx">  
+      <div class="containerx">
+        <img src="people_7_manshort_front_black_250.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Футболки бавовна Рей Аянамі EVA-00
+      </div>
+    </div>
+    <div class="columnx">
+      <div class="containerx">
+        <img src="people_4_manshortfull_front_white_250.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Футболки 3D ТАНДЖИРО КЛИНОК РОЗСІКАЮЧИЙ ДЕМОНІВ
+      </div>
+    </div>
+    <div class="columnx">
+      <div class="containerx">
+        <img src="people_4_manshortfull_front_white_250 (2).jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Футболки 3D Ванпанчмен: Сайтама на фоні ієрогліфів
+      </div>
+    </div>
+    <div class="columnx">
+      <div class="containerx">
+        <img src="people_4_manshortfull_front_white_250 (1).jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Футболки 3D Мила Комі | У Комі проблеми зі спілкуванням
+      </div>
+    </div>
+    <div class="columnx">  
+      <div class="containerx">
+        <img src="people_4_manshortfull_front_white_250 (3).jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Футболки бавовна Bongo Cat
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="columnx">  
+      <div class="containerx">
+        <img src="people_4_mansuitfull_front_white_250.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Костюм 3D Персонаж 001
+      </div>
+    </div>
+    <div class="columnx">
+      <div class="containerx">
+        <img src="people_4_mansuitfull_front_black_250.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Костюм 3D червоний візерунок велика клітина
+      </div>
+    </div>
+    <div class="columnx">
+      <div class="containerx">
+        <img src="people_4_mansuitfull_front_black_250 (2).jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Костюм 3D Тигр та дракон
+      </div>
+    </div>
+    <div class="columnx">
+      <div class="containerx">
+        <img src="people_4_mansuitfull_front_black_250 (1).jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Костюм 3D Audi
+      </div>
+    </div>
+    <div class="columnx">  
+      <div class="containerx">
+        <img src="people_3_mens_suits_sports_with_shorts_front_white_250.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text">399₴</div>
+        </div>
+        Костюм з шортами 3D Крик котика
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="News" class="tabcontent">
+  <h3 style="color:black"><b>Крутий та незвичайний одяг</b></h3>
+  <p style="color:black">Красивий та стильний одяг з принтом призначений для енергійних та неординарних будь-якого віку. У нашому каталозі ви знайдете різноманітність колірних рішень та моделей: від традиційної класики до супермодного луку. Асортимент речей включає всі розміри (від 40 (XXS) до 76 (7XL)) і наступні види одягу:<br><br>
+  —круті майки та футболки ;<br>
+    —спортивні костюми та штани;<br>
+    —толстовки та світшоти ;<br>
+    —куртки та інший верхній одяг;<br>
+    —шорти та спідня білизна;<br>
+    —головні убори .<br><br>
+    Всі речі шиються з сучасних антиалергенних матеріалів, таких як 100% бавовна, поліестер і бавовна з додаванням еластану і лайкри. Круті вбрання з наших колекцій чудово доповнять будь-який стиль і допоможуть почуватися максимально комфортно та впевнено.<br><br>
+    <b>Дизайнерські макети для чоловічого одягу</b><br><br>
+    Надайте своєму образу оригінальність та індивідуальність за допомогою одягу з яскравими креативними малюнками та написами! Ми розробили величезну кількість макетів дизайну на улюблені вами тематики:<br><br>
+    —різні музичні жанри;<br>
+    —захоплюючі серіали ;<br>
+    —спорт та кіберспорт;<br>
+    —забавні та смішні тварини;<br>
+    —аніме та мульфільми;<br>
+    —автомобільні принти.<br><br>
+    Зображення, нанесені за допомогою сублімації, DTG друку, термотрансферу та інших передових друкованих технологій, виглядають дуже реалістично. До того ж вони дуже стійкі до вицвітання та деформації.<br><br>
+    Скористайтеся нашим онлайн-конструктором, який є ідеальним інструментом для редагування та створення власних макетів дизайну. Завантажуйте фотографії, незвичайні малюнки, пишіть вітання та романтичні зізнання – відчуйте себе справжнім дизайнером!<br><br>
+    <b>Детально про замовлення та доставку</b><br><br>
+    Завдяки простій та зручній системі оформлення замовлення ви можете швидко здійснити покупку модного одягу та аксесуарів у нашому інтернет-магазині. Достатньо додати обраний товар у кошик та заповнити встановлену форму заявки. Перед тим як натиснути кнопку «Завершити оформлення» рекомендуємо перевірити правильність внесення контактних даних та адреси одержувача, оскільки від цього залежить швидкість та вартість доставки.<br><br>
+    Термін виготовлення замовлення складає від 24 годин до 3 днів, залежно від виду виробу<br>
+  </p>
+</div>
+
+<div id="Contact" class="tabcontent">
+ <h2><b>Наші Контакти</b></h2>
+<p>+8 (800) 555 35 35<br>
+    info@odyag.ua</p>
+
+<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="rowx">
+    <div class="columnxx">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<script>
+// Initialize google maps
+function myMap() {
+  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 12};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR8P72HMX3zllKeeZt8X89dJWMEu0LSX8&callback=myMap" async defer></script>
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<a href="https://www.facebook.com" class="fa fa-facebook"></a>
+<a href="https://twitter.com" class="fa fa-twitter"></a>
+<a href="https://www.google.com" class="fa fa-google"></a>
+<a href="https://www.youtube.com" class="fa fa-youtube"></a>
+<a href="https://www.instagram.com" class="fa fa-instagram"></a>
+<a href="https://www.reddit.com" class="fa fa-reddit"></a>
+</html> 
+
+
+
+  
